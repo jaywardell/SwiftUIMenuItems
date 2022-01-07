@@ -13,6 +13,9 @@ public struct HostingWindow<Content: View>: View {
     
     @StateObject private var mainWindowResolver = WindowResolver()
     
+    public init(_ content: @escaping ()->Content) {
+        self.content = content
+    }
     
     public var body: some View {
         content()
