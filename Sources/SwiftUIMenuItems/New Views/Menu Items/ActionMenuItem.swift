@@ -12,8 +12,8 @@ public struct ActionMenuItem {
     
     @StateObject var dispatcher = MenuDispatcher.shared
     
-    let title: LocalizedStringKey
-    let publisher: PassthroughSubjectContainer<Void, Never>
+    public let title: LocalizedStringKey
+    public let publisher: PassthroughSubjectContainer<Void, Never>
 }
 
 // MARK: - ActionMenuItem: View

@@ -13,11 +13,11 @@ public final class CurrentValueSubjectContainer<Output: Equatable, Failure: Erro
     let id = UUID()
     let subject: CurrentValueSubject<Output, Failure>
         
-    init(_ subject: CurrentValueSubject<Output, Failure>) {
+    public init(_ subject: CurrentValueSubject<Output, Failure>) {
         self.subject = subject
     }
     
-    convenience init(_ startingValue: Output) {
+    public convenience init(_ startingValue: Output) {
         self.init(CurrentValueSubject<Output, Failure>(startingValue))
     }
     

@@ -13,11 +13,11 @@ public struct PassthroughSubjectContainer<Output, Failure: Error> {
     let id = UUID()
     let passthroughSubject: PassthroughSubject<Output, Failure>
     
-    init(_ passthroughSubject: PassthroughSubject<Output, Failure>) {
+    public init(_ passthroughSubject: PassthroughSubject<Output, Failure>) {
         self.passthroughSubject = passthroughSubject
     }
     
-    init() {
+    public init() {
         self.init(PassthroughSubject<Output, Failure>())
     }
 }
