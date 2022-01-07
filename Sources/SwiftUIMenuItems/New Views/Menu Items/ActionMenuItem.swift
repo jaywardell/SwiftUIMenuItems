@@ -10,7 +10,7 @@ import SwiftUI
 /// use as a convenience init for menu items that use PassthroughSubjectContainer
 public struct ActionMenuItem {
     
-    @StateObject var dispatcher = MenuDispatcher.shared
+    @StateObject private var dispatcher = MenuDispatcher.shared
     
     public let title: LocalizedStringKey
     public let publisher: PassthroughSubjectContainer<Void, Never>
