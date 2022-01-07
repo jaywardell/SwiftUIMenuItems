@@ -19,7 +19,7 @@ public struct ChoicesSubMenu<Choices: RandomAccessCollection> where Choices.Elem
     
     let descriptionForElement: (Choices.Element)->String
     
-    init(title: LocalizedStringKey, choices: Choices, subject: CurrentValueSubjectContainer<Choices.Element, Never>, descriptionForElement: @escaping (Choices.Element)->String) {
+    public init(title: LocalizedStringKey, choices: Choices, subject: CurrentValueSubjectContainer<Choices.Element, Never>, descriptionForElement: @escaping (Choices.Element)->String) {
         self.title = title
         self.subject = subject
         self.choices = choices

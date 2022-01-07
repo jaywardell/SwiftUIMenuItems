@@ -16,7 +16,7 @@ struct ToggleMenuItem {
 
     @StateObject var dispatcher = MenuDispatcher.shared
 
-    init(title: LocalizedStringKey,
+    public init(title: LocalizedStringKey,
          subject: CurrentValueSubjectContainer<Bool, Never>) {
         self.title = title
         self.publisher = subject

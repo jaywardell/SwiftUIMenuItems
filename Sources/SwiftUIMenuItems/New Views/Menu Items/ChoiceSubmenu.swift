@@ -22,7 +22,7 @@ public struct ChoiceSubmenu<Choice: PickerChoice> where Choice.AllCases: RandomA
 
     @StateObject var dispatcher = MenuDispatcher.shared
 
-    init(title: LocalizedStringKey,
+    public init(title: LocalizedStringKey,
          subject: CurrentValueSubjectContainer<Choice, Never>) {
         self.title = title
         self.publisher = subject
