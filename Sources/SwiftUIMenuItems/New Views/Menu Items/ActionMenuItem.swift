@@ -14,6 +14,11 @@ public struct ActionMenuItem {
     
     public let title: LocalizedStringKey
     public let publisher: PassthroughSubjectContainer<Void, Never>
+    
+    public init(_ title: LocalizedStringKey, _ publisher: PassthroughSubjectContainer<Void, Never>) {
+        self.title = title
+        self.publisher = publisher
+    }
 }
 
 // MARK: - ActionMenuItem: View
