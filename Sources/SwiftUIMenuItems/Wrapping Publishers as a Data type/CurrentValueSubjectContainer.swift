@@ -23,8 +23,9 @@ public final class CurrentValueSubjectContainer<Output: Equatable, Failure: Erro
     
     /// sends the value newValue to the container's subject on the next pass through the run loop.
     /// This allows the value of the subject to match the value passed in.
-    /// Use this, for instance, when a window becomes main, to make sure that the value in a menu matches the value in the content view.
-    func update(to newValue: Output) {
+    /// Use this, for instance, when a window becomes main, to make sure that the value in a menu matches the value in the content view,
+    /// or when a new view comes into focus that may have different data to synch with a menu item
+    public func update(to newValue: Output) {
         guard newValue != subject.value else { return }
         
         DispatchQueue.main.async {
