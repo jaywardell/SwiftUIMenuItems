@@ -27,9 +27,9 @@ struct MenuValueView<Value: Equatable>: View {
                 value = $0
                 action($0)
             }
-            .onDisappear {
-                menuDispatcher.forget(windowResolver)
-            }
+//            .onDisappear {
+//                menuDispatcher.forget(windowResolver)
+//            }
 
     }
 }

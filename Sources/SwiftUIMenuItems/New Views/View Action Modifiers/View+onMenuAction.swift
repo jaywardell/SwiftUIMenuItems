@@ -18,9 +18,9 @@ fileprivate struct MenuActionView: View {
     var body: some View {
         EmptyView()
             .onReceive(menuDispatcher.getMenuAction(for: publisher, using: windowResolver), perform: action)
-            .onDisappear {
-                menuDispatcher.forget(windowResolver)
-            }
+//            .onDisappear {
+//                menuDispatcher.forget(windowResolver)
+//            }
     }
 }
 

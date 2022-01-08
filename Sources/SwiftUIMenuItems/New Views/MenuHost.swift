@@ -11,7 +11,7 @@ public struct MenuHost<Content: View>: View {
     
     let content: ()->Content
     
-    @StateObject private var mainWindowResolver = WindowResolver()
+    @StateObject private var windowResolver = WindowResolver()
     
     public init(_ content: @escaping ()->Content) {
         self.content = content
@@ -20,9 +20,12 @@ public struct MenuHost<Content: View>: View {
     public var body: some View {
         content()
             .withHostingWindow {
-                mainWindowResolver.windowNumber = $0?.windowNumber
+                windowResolver.windowNumber = $0?.windowNumber
             }
-            .environmentObject(mainWindowResolver)
+            .onDisappear {
+                MenuDispatcher.shared.forget(windowResolver)
+            }
+            .environmentObject(windowResolver)
             .environmentObject(MenuDispatcher.shared)
             .environmentObject(ToolbarDispatcher.shared)
     }
