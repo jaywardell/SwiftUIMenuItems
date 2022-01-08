@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public struct HostingWindow<Content: View>: View {
+public struct MenuHost<Content: View>: View {
     
     let content: ()->Content
     
