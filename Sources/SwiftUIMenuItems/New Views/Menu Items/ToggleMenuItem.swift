@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ToggleMenuItem {
+public struct ToggleMenuItem {
     
     let title: LocalizedStringKey
     let publisher: CurrentValueSubjectContainer<Bool, Never>
@@ -28,7 +28,7 @@ struct ToggleMenuItem {
 
 extension ToggleMenuItem: View {
     
-    var body: some View {
+    public var body: some View {
         // NOTE: this code does produce a log message:
         //  onChange(of: Bool) action tried to update multiple times per frame
         // It seems benign, so I won't worry about it
